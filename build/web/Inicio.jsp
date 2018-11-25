@@ -32,100 +32,120 @@
 
     </head>
     <body>
-            <header class="hnav">
+        <header class="hnav">
+            <div class="navimgprincipal">
                 <h1 class="logoapp">
-                    <a href="javascript(0)" alt="Logo GestureTalkMx"></a>
+                    <a href="#" alt="Logo_GestureTalkMx"></a>
                 </h1>
-                <nav class="navbar">
-                    <a href="cerrarSesion.jsp"> Cerrar sesión</a>
-                    <a href="info.jsp">Informacion</a>
-                    <a href="puntaje.jsp">Puntaje</a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Dropdown 
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div> 
-                </nav>
-                <!-- IMG USER-->
-                <div class="imguser">
-                    <%
-                        switch (user.getId_avatar()) {
-                            case 1:
-                    %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
-                            break;
-                        case 2:
-                    %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
+            </div>
+
+            <nav class="navbar">
+                <a href="#"> Antes de empezar</a>
+                <div class="dropdown">
+                    <button class="dropbtn" href="info.jsp">Información 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Antecedentes</a>
+                        <a href="#">¿Sabías que...?</a>
+                        <a href="#">Datos curiosos</a>
+                        <a href="#">Estadísticas</a>
+                    </div>
+                </div> 
+
+                <a href="Busqueda.jsp">Diccionario</a>
+                <a href="Escoger.jsp">Practica</a>
+                <div class="dropdown">
+                    <button class="dropbtn" >Puntajes 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="puntaje.jsp">Puntaje personal</a>
+                        <a href="#">Puntajes globales</a>
+                    </div>
+                </div> 
+
+                <div class="dropdown nvimguser">
+                    <div class="imguser">
+                        <%
+                            switch (user.getId_avatar()) {
+                                case 1:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
+                                break;
+                            case 2:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
                                 break;
                             case 3:
-                    %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
                                 break;
                             case 4:
-                    %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
                                 break;
                             case 5:
-                    %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
                                 break;
                             case 6:
-                    %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
                                 break;
                             default:
-                    %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
                                     break;
                             }
                             out.println("<span id='letras'>" + user.getNickname() + "</span>");
-                    %>                                                             
-                </div>
+                        %>                                                             
+                    </div>
+                    <div class="dropdown-content nvuser {">
+                            <a href="configuracion.jsp"> Configuración</a>
+                            <a href="cerrarSesion.jsp"> Cerrar sesión</a>
+                        </div>
+                    </div> 
+                </nav>
             </header>
 
-        <div class="fondoapp">
-            <div class="wrap ppalapp">
-                <div class="slickclass ppalapp">
-                    <div >
-                        <a href="Inicio.jsp"><img class="imgslick" src="Imagenes/menu_Principal/Tarjeta.png" alt="Principal" ></a>
+            <div class="fondoapp">
+                <div class="wrap ppalapp">
+                    <div class="slickclass ppalapp">
+                        <div >
+                            <a href="Inicio.jsp"><img class="imgslick" src="Imagenes/menu_Principal/Tarjeta.png" alt="Principal" ></a>
+                        </div>
+
+                        <div >
+                            <a href="info.jsp"><img class="imgslick" src="Imagenes/menu_Principal/Tarjeta2.png" alt="SobreNosotros" ></a>
+                        </div>
+
+                        <div >
+                            <a href="Busqueda.jsp"><img class="imgslick" src="Imagenes/menu_Principal/Tarjeta3.png" alt="Buscar" ></a>
+                        </div>
                     </div>
 
-                    <div >
-                        <a href="info.jsp"><img class="imgslick" src="Imagenes/menu_Principal/Tarjeta2.png" alt="SobreNosotros" ></a>
-                    </div>
- 
-                    <div >
-                        <a href="Busqueda.jsp"><img class="imgslick" src="Imagenes/menu_Principal/Tarjeta3.png" alt="Buscar" ></a>
-                    </div>
+                </div>   
+                <div id="ppalopc" class="wrap">
+                    <div class="col-4"><a href="Busqueda.jsp"><img  src="Imagenes/menu_Principal/Diccionario.png" class="img-responsive"></a></div>
+                    <div class="col-4"><a href="Escoger.jsp"><img  src="Imagenes/menu_Principal/Nivel.png" class="img-responsive"></a></div>
+                    <div class="col-4"><a href="configuracion.jsp"><img src="Imagenes/menu_Principal/configuracion.png" class="img-responsive"></a></div>
                 </div>
 
-            </div>   
-            <div id="ppalopc" class="wrap">
-                <div class="col-4"><a href="Busqueda.jsp"><img  src="Imagenes/menu_Principal/Diccionario.png" class="img-responsive"></a></div>
-                <div class="col-4"><a href="Escoger.jsp"><img  src="Imagenes/menu_Principal/Nivel.png" class="img-responsive"></a></div>
-                <div class="col-4"><a href="configuracion.jsp"><img src="Imagenes/menu_Principal/configuracion.png" class="img-responsive"></a></div>
             </div>
 
-        </div>
-        
-        <footer>
-            <div class="wrap">
-                <p>Todos los derechos reservados Gesture Talk S.A de C.V.</p>
-                <h4 class="titulo-pequeno">correo@mail.com</h4>
-            </div>        
-        </footer>
+            <footer>
+                <div class="wrap">
+                    <p>Todos los derechos reservados Gesture Talk S.A de C.V.</p>
+                    <h4 class="titulo-pequeno">correo@mail.com</h4>
+                </div>        
+            </footer>
 
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script type="text/javascript">
-            $('.slickclass').slick({
-                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear'
-            });
+            <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+            <script type="text/javascript">
+                $('.slickclass').slick({
+                    prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+                    nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    cssEase: 'linear'
+                });
 
-        </script>
-    </body>
-</html>
+            </script>
+        </body>
+    </html>
 
