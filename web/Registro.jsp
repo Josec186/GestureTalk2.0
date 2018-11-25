@@ -127,27 +127,17 @@
                     <div class="col-sm-6">
                         <div class="col-sm-12" id="regfotos">                             
                             <div class="imgpre">
-                                <div class="col-sm-12"><label><img class="img-responsive" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" width="200px;" height="200px" ></label></div>                                
+                                <div class="col-sm-12"><label><img class="img-responsive" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" ></label></div>                                
                             </div>
                             <div class="row" style="text-align: center;"><span class="letras">Elige tu avatar</span></div>
                             <div class="imgoptions" id="imgBorder">
-                                <img class="imgpre" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg" >
-                                <img class="imgpre" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg">
-                                <img class="imgpre" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg">
-                                <img class="imgpre" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg">
-                                <img class="imgpre" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg" >
-                                <img class="imgpre" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg" >
+                                <img class="imgpre img-responsive" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg" >
+                                <img class="imgpre img-responsive" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg">
+                                <img class="imgpre img-responsive" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg">
+                                <img class="imgpre img-responsive" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg">
+                                <img class="imgpre img-responsive" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg" >
+                                <img class="imgpre img-responsive" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg" >
                             </div>                                  
-<!--                            <div class="row" id="imgBorder">
-                                <div class="col-sm-4"><img class="img-responsive" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-responsive" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-responsive" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg" width="100px;" height="100px"></div>
-                            </div>
-                            <div class="row" id="imgBorder">
-                                <div class="col-sm-4"><img class="img-responsive" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-responsive" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-responsive" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg" width="100px;" height="100px"></div>
-                            </div>                                  -->
                             <div class="row" style="text-align: center;">
                                 <span name="demo" class="msgError" id="error"></span>
                                 <%if (request.getParameter("error") != null) {
@@ -157,7 +147,7 @@
                             </div>
 
                             <!--                            <div class="row"  id="efecto"><a onmouseover="playclip();" onclick="submit(); clearBox('demo -->
-                            <div class="row"  id="efecto" onmouseover="playclip();">
+                            <div onmouseover="playclip();">
                                 <input type="text" hidden value="1" id="papafranku" name="avatar">
                                 <input type="submit" value="Registrate" class="parrafo-normal btnoragne">       
                             </div>

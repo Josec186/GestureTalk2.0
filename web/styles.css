@@ -208,7 +208,7 @@ input[type=text],input[type=password] {
 .ltarrow {
     font-size: 5em;
     color: #FAAD3C;
-    margin: 1%;
+    margin-left: -25%;
 }
 input.parrafo-normal.btnoragne {
     font-size: 2.5em;
@@ -219,15 +219,21 @@ input.parrafo-normal.btnoragne {
     
 }
 .imgpre {
-    max-width: 180px;
-    max-height: 130px;
+    max-width: 125px;
+    max-height: 125px;
 }
 .imgoptions{
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    
-    
+    width: 75%;   
+    justify-content: space-evenly;
+}
+#regfotos * {
+    margin-bottom: 1%;
+}
+.btnsubmitreg{
+    margin: 0;
 }
 
 /*------------------INICIA SESION----------------*/
@@ -371,6 +377,26 @@ header{
     justify-content: start;
     align-items: center;
 }
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 15px 0%;
+    background-color: rgb(56, 71, 97);
+}
+footer .wrap{
+    width: 90%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+footer .wrap *{
+    color: white; 
+}
+footer p{
+    
+}
+
 .pad2 {
     max-width: 90px;
 }
@@ -384,4 +410,37 @@ header{
 #ppalopc {
     
     justify-content: space-between;
+}
+.slickclass{
+    width: 100%;
+}
+button.slick-arrow {
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    background-color: rgba(93, 118, 162, 0.5); 
+    border: none;
+    color: white;
+    padding: 32px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+button.slick-arrow:hover {
+    background-color: rgba(69, 88, 121, 0.8); 
+     transition: all 0.5s ease;
+}
+button.slick-prev {
+    left: 0;
+}
+button.slick-next{
+    right: 0;
+}
+.fa-angle-left, .fa-angle-right{
+    font-size: 4em;
+}
+.imgslick{
+    width: 100%;
+    object-fit: cover;
+   
 }
