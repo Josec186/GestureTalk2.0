@@ -91,7 +91,7 @@
                         %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
                                     break;
                             }
-                            out.println("<span id='letras'>" + user.getNickname() + "</span>");
+                            out.println("<span id='letras' class='titulo-pequeno'>" + user.getNickname() + "</span>");
                         %>                                                             
                     </div>
                     <div class="dropdown-content nvuser {">

@@ -42,65 +42,95 @@
     </head>
     <body>
         <header class="hnav">
-            <h1 class="logoapp">
-                <a href="javascript(0)" alt="Logo GestureTalkMx"></a>
-            </h1>
+            <div class="navimgprincipal" href="Inicio.jsp">
+                <h1 class="logoapp">
+                    <a href="#" alt="Logo_GestureTalkMx"></a>
+                </h1>
+            </div>
+
             <nav class="navbar">
-                <a href="cerrarSesion.jsp"> Cerrar sesión</a>
-                <a href="info.jsp">Informacion</a>
-                <a href="puntaje.jsp">Puntaje</a>
+                <a class="imgreturn" href="Inicio.jsp">
+                    <img class="img-responsive" src="Imagenes/menu_Principal/regresar.png" >
+                </a>
+                <a href="#"> Antes de empezar</a>
                 <div class="dropdown">
-                    <button class="dropbtn">Dropdown 
+                    <button class="dropbtn" href="info.jsp">Información 
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
+                        <a href="#">Antecedentes</a>
+                        <a href="#">¿Sabías que...?</a>
+                        <a href="#">Datos curiosos</a>
+                        <a href="#">Estadísticas</a>
                     </div>
                 </div> 
-            </nav>
-            <!-- IMG USER-->
-            <div class="imguser">
-                <%                        switch (user.getId_avatar()) {
-                        case 1:
-                %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
-                        break;
-                    case 2:
-                %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
-                        break;
-                    case 3:
-                %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
-                        break;
-                    case 4:
-                %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
-                        break;
-                    case 5:
-                %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
-                        break;
-                    case 6:
-                %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
-                        break;
-                    default:
-                %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
-                            break;
-                    }
-                    out.println("<span id='letras'>" + user.getNickname() + "</span>");
-                %>                                                             
-            </div>
-        </header>
-        <div class="fondoapp">
-            <div class="wrap">
-                <div>
+
+                <a href="Busqueda.jsp">Diccionario</a>
+                <a href="Escoger.jsp">Practica</a>
+                <div class="dropdown">
+                    <button class="dropbtn" >Puntajes 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="puntaje.jsp">Puntaje personal</a>
+                        <a href="#">Puntajes globales</a>
+                    </div>
+                </div> 
+
+                <div class="dropdown nvimguser">
+                    <div class="imguser">
+                        <%                            switch (user.getId_avatar()) {
+                                case 1:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
+                                break;
+                            case 2:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
+                                break;
+                            case 3:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
+                                break;
+                            case 4:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
+                                break;
+                            case 5:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
+                                break;
+                            case 6:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
+                                break;
+                            default:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
+                                    break;
+                            }
+                            out.println("<span id='letras' class='titulo-pequeno'>" + user.getNickname() + "</span>");
+                        %>                                                             
+                    </div>
+                    <div class="dropdown-content nvuser {">
+                            <a href="configuracion.jsp"> Configuración</a>
+                            <a href="cerrarSesion.jsp"> Cerrar sesión</a>
+                        </div>
+                    </div> 
+                </nav>
+            </header>
                     
+            <div class="fondoapp">
+                <div class="wrap puntpersonal">
+                    <div id="imgpuntprincipal">
+                        <img src="Imagenes/Puntuacion/trofeo.png" class="img-responsive">
+                    </div>
+                    <div id="infpuntprincipal">
+                        <div class="tuPuntaje"><h3 class="titulo-grande">Tu puntaje</h3></div>
+                        <div class="tuPuntaje"><%out.println("<h3 class='titulo-grande'>" + puntaje + "</h3>");%></div>
+                        <div ><img src="Imagenes/Puntuacion/sigueEsforzandote.png"></div>
+                    </div>                
                 </div>
-                <img src="Imagenes/Puntuacion/trofeo.png" class="img-responsive" width="80%">
-                <div class="">
-                    <div class="tuPuntaje"><span class="stylePuntaje">Tú puntaje</span></div>
-                    <div class="puntos"><%out.println("<span class='stylePuntos'>" + puntaje + "</span>");%></div>
-                    <div ><img src="Imagenes/Puntuacion/sigueEsforzandote.png"></div>
-                </div>                
             </div>
-        </div>
-    </body>
-</html>
+                        
+            <footer>
+                <div class="wrap">
+                    <p>Todos los derechos reservados Gesture Talk S.A de C.V.</p>
+                    <h4 class="titulo-pequeno">correo@mail.com</h4>
+                </div>        
+            </footer>
+        </body>
+    </html>

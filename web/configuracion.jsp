@@ -18,11 +18,16 @@
         <title>Configución</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <!--        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
         <link href="Estilos/styleConfiguracion.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Ubuntu:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
         <script src="JavaScripCodes/PrincipalFunciones.js"  type="text/javascript"></script>
+        <link href="reset.css" rel="stylesheet" type="text/css">
+        <link href="styles.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="Imagenes\InicioSesion\icon.png">
     </head>
     <body>
@@ -112,7 +117,7 @@
                     document.getElementById('errorPass').innerHTML = "El espacio está vacío";
                 }
             }
-            
+
             function hiddeChangePass() {
                 if (document.getElementById('newPass').value !== "" || document.getElementById('confNewPass').value !== "") {
                     if (document.getElementById('newPass').value === document.getElementById('confNewPass').value) {
@@ -153,48 +158,77 @@
             }
         </script>
         <div class="container-fluid">
-            <div class="row">
-                <div class="row">
-                    <div class="col-sm-9" style="background-color: rgb(69, 88, 121);">
-                        <div class="row">
-                            <div class="col-sm-3"><img class="pad img-responsive" src="Imagenes/menu_Principal/logo.png"></div>
-                            <div class="col-sm-2 "><br><a href="Inicio.jsp"><img class="pad img-responsive" src="Imagenes/menu_Principal/regresar.png" width="65%"></a></div>
-                            <div class="col-sm-7"></div>
-                        </div>                
-                    </div>
-                    <div class="col-sm-3" style="background-color: rgb(147, 205, 207);">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-8 text-center" >
-                            <%
-                                switch (user.getId_avatar()) {
+            <header class="hnav">
+                <div class="navimgprincipal" href="Inicio.jsp">
+                    <h1 class="logoapp">
+                        <a href="#" alt="Logo_GestureTalkMx"></a>
+                    </h1>
+                </div>
+
+                <nav class="navbar">
+                    <a class="imgreturn" href="Inicio.jsp">
+                        <img class="img-responsive" src="Imagenes/menu_Principal/regresar.png" >
+                    </a>
+                    <a href="#"> Antes de empezar</a>
+                    <div class="dropdown">
+                        <button class="dropbtn" href="info.jsp">Información 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Antecedentes</a>
+                            <a href="#">¿Sabías que...?</a>
+                            <a href="#">Datos curiosos</a>
+                            <a href="#">Estadísticas</a>
+                        </div>
+                    </div> 
+
+                    <a href="Busqueda.jsp">Diccionario</a>
+                    <a href="Escoger.jsp">Practica</a>
+                    <div class="dropdown">
+                        <button class="dropbtn" >Puntajes 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="puntaje.jsp">Puntaje personal</a>
+                            <a href="#">Puntajes globales</a>
+                        </div>
+                    </div> 
+
+                    <div class="dropdown nvimguser">
+                        <div class="imguser">
+                            <%                            switch (user.getId_avatar()) {
                                     case 1:
-                            %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png" width="108px" height="108px"></div><%
+                            %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
                                     break;
                                 case 2:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" width="108px" height="108px"></div><%
+                            %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
+                                    break;
+                                case 3:
+                            %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
+                                    break;
+                                case 4:
+                            %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
+                                    break;
+                                case 5:
+                            %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
+                                    break;
+                                case 6:
+                            %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
+                                    break;
+                                default:
+                            %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
                                         break;
-                                    case 3:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    case 4:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    case 5:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    case 6:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    default:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png" width="108px" height="108px"></div><%
-                                            break;
-                                    }
-                                    out.println("<div class='row'><span id='letras'>" + user.getNickname() + "</span></div>");
-                                %>                                                             
+                                }
+                                out.println("<span id='letras' class='titulo-pequeno'>" + user.getNickname() + "</span>");
+                            %>                                                             
                         </div>
-                        <div class="col-sm-2"></div>
-                    </div>
-                </div>        
+                        <div class="dropdown-content nvuser {">
+                                <a href="configuracion.jsp"> Configuración</a>
+                                <a href="cerrarSesion.jsp"> Cerrar sesión</a>
+                            </div>
+                        </div> 
+                    </nav>
+                </header>       
 
                 <div class="row">
                     <div class="col-sm-4"></div>
@@ -273,6 +307,11 @@
                     <div class="col-sm-4"></div>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+            <footer>
+                <div class="wrap">
+                    <p>Todos los derechos reservados Gesture Talk S.A de C.V.</p>
+                    <h4 class="titulo-pequeno">correo@mail.com</h4>
+                </div>        
+            </footer>
+        </body>
+    </html>

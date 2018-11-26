@@ -277,7 +277,7 @@ input.parrafo-normal.btnoragne {
 
 /*----------APP---------*/
 .fondoapp {
-    height: calc(100vh - 12vh - 47px);
+    height: calc(100vh - 15vh - 56px);
     color: #eff1f6;
     min-height: fit-content;
     width: 100%;
@@ -303,7 +303,7 @@ header{
     flex-flow: row;
     align-items: flex-end;
     justify-content: space-between;
-    height: 12vh;
+    height: 15vh;
 }
 .mnuprincipal{
     display: flex;
@@ -321,7 +321,7 @@ header{
 
 .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 17px;
     width: 12%;
     color: white;
     text-align: center;
@@ -329,7 +329,7 @@ header{
     text-decoration: none;
 }
 .navimgprincipal {
-    height: 12vh;
+    height: 15vh;
     width: 15%;
     display: flex;
     justify-content: center;
@@ -337,7 +337,7 @@ header{
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 17px;
     border: none;
     width: 125%;
     outline: none;
@@ -393,11 +393,20 @@ header{
     justify-content: start;
     align-items: center;
 }
+#letras.titulo-pequeno{
+    color: white;
+}
+.navbar .imgreturn {
+    width: 6%;
+    padding: 0;
+    border-radius: 100%;
+}
 footer {
+    font-size: 0.7em;
     position: absolute;
     width: 100%;
     bottom: 0;
-    padding: 15px 0%;
+    padding: 10px 0%;
     background-color: rgb(56, 71, 97);
 }
 footer .wrap{
@@ -415,6 +424,7 @@ footer p{
 
 .pad2 {
     max-width: 70px;
+    margin-bottom: 3%;
 }
 .ppalapp, #ppalopc{
     display: flex;
@@ -456,6 +466,25 @@ button.slick-next{
 }
 .imgslick{
     width: 100%;
-    object-fit: cover;
-   
+    object-fit: cover;  
 }
+/*-----------------PUNTAJE PERSONAL----------*/
+.wrap.puntpersonal{
+    display: flex;
+    flex-flow: row;
+}
+#imgpuntprincipal{
+    width: 35%;
+}
+#infpuntprincipal {
+    width: 60%;
+    display: flex;
+    margin-left: 5%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.tuPuntaje .titulo-grande  {
+    color: rgb(19, 24, 32);
+}
+
