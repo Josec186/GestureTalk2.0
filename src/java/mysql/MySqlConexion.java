@@ -16,8 +16,8 @@ public class MySqlConexion {
         //Conectar con mysql...
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String connectionUrl = "jdbc:mysql://localhost/gtmx?"
-                    + "user=root&password=123puchamon";
+            String connectionUrl = "jdbc:mysql://192.168.1.88/gtmx?"
+                    + "user=erick&password=123puchamon";
             conn = DriverManager.getConnection(connectionUrl);
         } catch (SQLException e) {
             System.out.println("SQL Exception: " + e.toString());

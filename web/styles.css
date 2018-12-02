@@ -222,6 +222,11 @@ input.parrafo-normal.btnoragne {
     max-width: 125px;
     max-height: 125px;
 }
+#imgBorder img:hover {
+    border: solid;
+    max-width: 118px;
+    max-height: 118px;
+}
 .imgoptions{
     display: flex;
     flex-flow: row;
@@ -289,6 +294,7 @@ input.parrafo-normal.btnoragne {
 
 .logoapp {
     height: 80px;
+/*    height: 60px;*/
     width: 100%;
     background-image: url(Imagenes/Principal/Logo.png);
     background-size: 100% auto;
@@ -432,8 +438,7 @@ footer p{
     justify-content: center;
     flex-wrap: wrap;
 }
-#ppalopc {
-    
+#ppalopc {   
     justify-content: space-between;
 }
 .slickclass{
@@ -446,7 +451,7 @@ button.slick-arrow {
     background-color: rgba(93, 118, 162, 0.5); 
     border: none;
     color: white;
-    padding: 32px 20px;
+    padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -488,3 +493,33 @@ button.slick-next{
     color: rgb(19, 24, 32);
 }
 
+/*--------index-----------*/
+#headindex{
+    height: calc (100vh - 15vh);
+    min-height: fit-content;
+    width: 100%;
+    background-image: url(Imagenes/index/fondoindex.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#listaapp{
+    
+}
+
+/*-----------------CONFIGURACION----------*/
+#select-avatar, #cambio-nombre, #conf-pass, #change-pass{
+    display: none;
+}
+.wrap.cnfppal {
+    flex-flow: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: inherit;
+}

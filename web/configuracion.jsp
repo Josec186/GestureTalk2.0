@@ -20,12 +20,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
         <link href="Estilos/styleConfiguracion.css" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Ubuntu:400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
         <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-        <script src="JavaScripCodes/PrincipalFunciones.js"  type="text/javascript"></script>
+        <!--        <script src="JavaScripCodes/PrincipalFunciones.js"  type="text/javascript"></script>-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+        <script src="JavaScripCodes/scripts.js"  type="text/javascript"></script>
         <link href="reset.css" rel="stylesheet" type="text/css">
         <link href="styles.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="Imagenes\InicioSesion\icon.png">
@@ -73,9 +75,12 @@
                 }
 
             }
-            function displayConCont() {
-                document.getElementById('conf-pass').style.display = 'block';
-            }
+//             function displayAvatars() {
+//                document.getElementById('select-avatar').style.display = 'block';
+//            }
+//            function displayConCont() {
+//                document.getElementById('conf-pass').style.display = 'block';
+//            }
 
             var ajax;
             function funcionCallback() {
@@ -132,9 +137,7 @@
                     document.getElementById('errorNewPass').innerHTML = "Hay campos vacios";
                 }
             }
-            function displayAvatars() {
-                document.getElementById('select-avatar').style.display = 'block';
-            }
+
             function hiddeChangeAvatar() {
                 document.getElementById('select-avatar').style.display = 'none';
                 bandAvatar = true;
@@ -157,156 +160,194 @@
                 location.href = "checkCambiosConfig.jsp?nombre=" + nombre + "&pass=" + pass + "&avatar=" + avatar + "&id=" + id_usuario + "&band=" + band;
             }
         </script>
-        <div class="container-fluid">
-            <header class="hnav">
-                <div class="navimgprincipal" href="Inicio.jsp">
-                    <h1 class="logoapp">
-                        <a href="#" alt="Logo_GestureTalkMx"></a>
-                    </h1>
-                </div>
-
-                <nav class="navbar">
-                    <a class="imgreturn" href="Inicio.jsp">
-                        <img class="img-responsive" src="Imagenes/menu_Principal/regresar.png" >
-                    </a>
-                    <a href="#"> Antes de empezar</a>
-                    <div class="dropdown">
-                        <button class="dropbtn" href="info.jsp">Información 
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Antecedentes</a>
-                            <a href="#">¿Sabías que...?</a>
-                            <a href="#">Datos curiosos</a>
-                            <a href="#">Estadísticas</a>
-                        </div>
-                    </div> 
-
-                    <a href="Busqueda.jsp">Diccionario</a>
-                    <a href="Escoger.jsp">Practica</a>
-                    <div class="dropdown">
-                        <button class="dropbtn" >Puntajes 
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="puntaje.jsp">Puntaje personal</a>
-                            <a href="#">Puntajes globales</a>
-                        </div>
-                    </div> 
-
-                    <div class="dropdown nvimguser">
-                        <div class="imguser">
-                            <%                            switch (user.getId_avatar()) {
-                                    case 1:
-                            %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
-                                    break;
-                                case 2:
-                            %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
-                                    break;
-                                case 3:
-                            %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
-                                    break;
-                                case 4:
-                            %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
-                                    break;
-                                case 5:
-                            %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
-                                    break;
-                                case 6:
-                            %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
-                                    break;
-                                default:
-                            %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
-                                        break;
-                                }
-                                out.println("<span id='letras' class='titulo-pequeno'>" + user.getNickname() + "</span>");
-                            %>                                                             
-                        </div>
-                        <div class="dropdown-content nvuser {">
-                                <a href="configuracion.jsp"> Configuración</a>
-                                <a href="cerrarSesion.jsp"> Cerrar sesión</a>
-                            </div>
-                        </div> 
-                    </nav>
-                </header>       
-
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <div class="row"><br><br></div>
-                        <div class="row text-center"><a href="#" onclick="displayAvatars()"><img class="img-responsive" src="Imagenes/Configuracion/btnCambioAvatar.png"></a></div>
-                        <div class="row" id="select-avatar" style="display: none;">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10" style="align-items: center;"><br>                            
-                                <div class="row">                                    
-                                    <div class="col-sm-12 text-center"><label><img class="img-responsive" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" width="100px;" height="100px" ></label></div>                                                                    
-                                </div>
-                                <div class="row" style="text-align: center;"><span class="letrasForm">Elige tu avatar</span></div>
-                                <div class="row" id="imgBorder">
-                                    <div class="col-sm-4"><img class="img-responsive" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg" width="100px;" height="100px"></div>
-                                    <div class="col-sm-4"><img class="img-responsive" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg" width="100px;" height="100px"></div>
-                                    <div class="col-sm-4"><img class="img-responsive" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg" width="100px;" height="100px"></div>
-                                </div>
-                                <div class="row" id="imgBorder">
-                                    <div class="col-sm-4"><img class="img-responsive" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg" width="100px;" height="100px"></div>
-                                    <div class="col-sm-4"><img class="img-responsive" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg" width="100px;" height="100px"></div>
-                                    <div class="col-sm-4"><img class="img-responsive" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg" width="100px;" height="100px"></div>
-                                </div>
-                            </div>
-                            <div class="row text-center">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-4">
-                                    <div class="row text-center"><a href="#" onclick="hiddeChangeAvatar()"><br><img class="img-responsive" src="Imagenes/Configuracion/btnConfirmarCambio.png"></a></div>
-                                </div>
-                                <div class="col-sm-4"></div>
-                            </div>
-                        </div>
-                        <div class="row"><br><br><br></div>
-                        <div class="row text-center"><a href="#" onclick="openChangeName()"><img class="img-responsive" src="Imagenes/Configuracion/btnCambioNombre.png"></a></div>
-                        <div class="row" id="cambio-nombre" style="display: none;">
-                            <div class="row text-center"><br><p class="errorMsg" id="errorNombre"></p></div>
-                            <div class="row text-center"><br><input class="bor" id="nombre" type="text" value="<%=user.getNickname()%>" maxlength="10"></div>
-                            <div class="col-sm-4"></div>
-                            <div class="col-sm-4">
-                                <div class="row text-center"><a href="#" onclick="hiddeChangeName()"><br><img class="img-responsive" src="Imagenes/Configuracion/btnConfirmarCambio.png"></a></div>
-                            </div>
-                            <div class="col-sm-4"></div>
-                        </div>
-                        <div class="row"><br><br><br></div>
-                        <div class="row text-center"><a href="#" onclick="displayConCont()"><img class="img-responsive" src="Imagenes/Configuracion/bntCambioConstrasena.png"></a></div>
-                        <div class="row" id="conf-pass" style="display: none;">
-                            <div class="row text-center"><br><p class="errorMsg" id="errorPass"></p></div>
-                            <div class="row text-center"><br><p class="letrasForm">Confirmar Contraseña</p></div>                            
-                            <div class="row"><br>
-                                <input class="bor" id="oldPass" type="password">
-                                <a href="#" onclick="compruebaPass()"><img src="Imagenes/Configuracion/btnConfirmarCambio.png"></a>
-                            </div>
-                        </div>
-                        <div class="row" id="change-pass" style="display: none;">
-                            <div class="row text-center"><br><p class="errorMsg" id="errorNewPass"></p></div>
-                            <div class="col-sm-6" >
-                                <div class="row text-center"><br><p class="letrasForm">Nueva Contraseña</p></div>
-                                <input class="bor" id="newPass" type="password">
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="row text-center"><br><p class="letrasForm">Confirma Contraseña</p></div>
-                                <input class="bor" id="confNewPass" type="password">
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-4">
-                                    <div class="row text-center"><a href="#" onclick="hiddeChangePass()"><br><img class="img-responsive" src="Imagenes/Configuracion/btnConfirmarCambio.png"></a></div>
-                                </div>
-                                <div class="col-sm-4"></div>
-                            </div>
-                        </div>
-
-                        <div class="row"><br><br><br></div>
-                        <div class="row text-center"><a href="#" onclick="sendUpdate()"><img class="img-responsive" src="Imagenes/Configuracion/btnConfirmar.png"></a></div>
-                    </div>
-                    <div class="col-sm-4"></div>
-                </div>
+        <header class="hnav">
+            <div class="navimgprincipal" href="Inicio.jsp">
+                <h1 class="logoapp">
+                    <a href="#" alt="Logo_GestureTalkMx"></a>
+                </h1>
             </div>
+
+            <nav class="navbar">
+                <a class="imgreturn" href="Inicio.jsp">
+                    <img class="img-resp" src="Imagenes/menu_Principal/regresar.png" >
+                </a>
+                <a href="#"> Antes de empezar</a>
+                <div class="dropdown">
+                    <button class="dropbtn" href="info.jsp">Información 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Antecedentes</a>
+                        <a href="#">¿Sabías que...?</a>
+                        <a href="#">Datos curiosos</a>
+                        <a href="#">Estadísticas</a>
+                    </div>
+                </div> 
+
+                <a href="Busqueda.jsp">Diccionario</a>
+                <a href="Escoger.jsp">Practica</a>
+                <div class="dropdown">
+                    <button class="dropbtn" >Puntajes 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="puntaje.jsp">Puntaje personal</a>
+                        <a href="#">Puntajes globales</a>
+                    </div>
+                </div> 
+
+                <div class="dropdown nvimguser">
+                    <div class="imguser">
+                        <%                            switch (user.getId_avatar()) {
+                                case 1:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
+                                break;
+                            case 2:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
+                                break;
+                            case 3:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
+                                break;
+                            case 4:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
+                                break;
+                            case 5:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
+                                break;
+                            case 6:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
+                                break;
+                            default:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
+                                    break;
+                            }
+                            out.println("<span id='letras' class='titulo-pequeno'>" + user.getNickname() + "</span>");
+                        %>                                                             
+                    </div>
+                    <div class="dropdown-content nvuser {">
+                            <a href="configuracion.jsp"> Configuración</a>
+                            <a href="cerrarSesion.jsp"> Cerrar sesión</a>
+                        </div>
+                    </div> 
+                </nav>
+            </header>       
+
+            <div class="fondoapp">
+                <div class="wrap cnfppal">
+                    <!--           --------------------------CAMBIO DE IMAGEN--------------   -->
+<!--                    VARIABLE DE CAMBIO, SI SE DETECTA QUE CAMBIO ALGO AHORA SI EL BOTON DE CONFIRMAR SE MUESTRA-->
+                    
+                    <div id="chgavatar">
+                        <a href="javascript:void(0)">
+                            <div class="btnoragne btnesconf">
+                                <h2 class="parrafo-normal">
+                                    Cambiar Avatar
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="select-avatar">
+                        <div class="col-sm-10" style="align-items: center;">                            
+                            <div>                                    
+                                <div class="col-sm-12"><label><img class="img-resp" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" width="100px;" height="100px" ></label></div>                                                                    
+                            </div>
+                            <div style="text-align: center;"><span class="letrasForm">Elige tu avatar</span></div>
+                            <div id="imgBorder">
+                                <div class="col-sm-4"><img class="img-resp" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg" width="100px;" height="100px"></div>
+                                <div class="col-sm-4"><img class="img-resp" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg" width="100px;" height="100px"></div>
+                                <div class="col-sm-4"><img class="img-resp" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg" width="100px;" height="100px"></div>
+                            </div>
+                            <div id="imgBorder">
+                                <div class="col-sm-4"><img class="img-resp" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg" width="100px;" height="100px"></div>
+                                <div class="col-sm-4"><img class="img-resp" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg" width="100px;" height="100px"></div>
+                                <div class="col-sm-4"><img class="img-resp" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg" width="100px;" height="100px"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <a href="javascript:void(0)" onclick="hiddeChangeAvatar()">
+                                        <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--           --------------------------CAMBIO DE NOMBRE--------------   -->                        
+                    <div id="chgname">
+                        <a href="javascript:void(0)">
+                            <div class="btnoragne btnesconf">
+                                <h2 class="parrafo-normal">
+                                    Cambiar Nombre de Usuario
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="cambio-nombre">
+                        <div><p class="errorMsg" id="errorNombre"></p></div>
+                        <div><input class="bor" id="nombre" type="text" value="<%=user.getNickname()%>" maxlength="10"></div>
+                        <div class="col-sm-4">
+                            <div><a href="javascript:void(0)" onclick="hiddeChangeName()">
+                                    <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--           --------------------------CAMBIO DE CONTRASEÑA--------------   -->                          
+                    <div id="chgpassw" >
+                        <a href="javascript:void(0)">
+                            <div class="btnoragne btnesconf">
+                                <h2 class="parrafo-normal">
+                                    Cambiar Contraseña
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="conf-pass">
+                        <div><p class="errorMsg" id="errorPass"></p></div>
+                        <div><p class="letrasForm">Confirmar Contraseña</p></div>                            
+                        <div>
+                            <input class="bor" id="oldPass" type="password">
+                            <a href="javascript:void(0)" onclick="compruebaPass()"><img src="Imagenes/Configuracion/btnConfirmarCambio.png"></a>
+                        </div>
+                    </div>
+                    <!--                        checar en donde se pone esto-->
+                    <div id="change-pass">
+                        <div><p class="errorMsg" id="errorNewPass"></p></div>
+                        <div class="col-sm-6" >
+                            <div><p class="letrasForm">Nueva Contraseña</p></div>
+                            <input class="bor" id="newPass" type="password">
+                        </div>
+                        <div class="col-sm-6">
+                            <div><p class="letrasForm">Confirma Contraseña</p></div>
+                            <input class="bor" id="confNewPass" type="password">
+                        </div>
+                        <div>
+                            <div class="col-sm-4">
+                                <div>
+                                    <a href="javascript:void(0)" onclick="hiddeChangePass()">
+                                        <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--           --------------------------BOTON DE CONFIRMACION--------------   --> 
+                    <div id="btnconfirmacion">
+                        <a href="javascript:void(0)" onclick="sendUpdate()">
+                            <div class="btnoragne btnesconf">
+                                <h2 class="parrafo-normal">
+                                    Confirmar Todos los cambios
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>  
+                        
             <footer>
                 <div class="wrap">
                     <p>Todos los derechos reservados Gesture Talk S.A de C.V.</p>

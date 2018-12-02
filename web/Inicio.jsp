@@ -42,7 +42,7 @@
             <nav class="navbar">
                 <a href="#"> Antes de empezar</a>
                 <div class="dropdown">
-                    <button class="dropbtn" href="info.jsp">Información 
+                    <button class="dropbtn" onclick="window.location.href='info.jsp'">Información 
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
@@ -117,8 +117,8 @@
                             <a href="Busqueda.jsp"><img class="imgslick" src="Imagenes/menu_Principal/Tarjeta3.png" alt="Buscar" ></a>
                         </div>
                     </div>
-
                 </div>   
+                
                 <div id="ppalopc" class="wrap">
                     <div class="col-4"><a href="Busqueda.jsp"><img  src="Imagenes/menu_Principal/Diccionario.png" class="img-responsive"></a></div>
                     <div class="col-4"><a href="Escoger.jsp"><img  src="Imagenes/menu_Principal/Nivel.png" class="img-responsive"></a></div>
