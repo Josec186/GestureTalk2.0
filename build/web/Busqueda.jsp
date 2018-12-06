@@ -17,11 +17,16 @@
         <title>Búsqueda</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="Estilos/styleBusqueda.css" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="JavaScripCodes/PrincipalFunciones.js"  type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Ubuntu:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+        <!--        <script src="JavaScripCodes/PrincipalFunciones.js"  type="text/javascript"></script>-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+        <script src="JavaScripCodes/scripts.js"  type="text/javascript"></script>
+        <link href="reset.css" rel="stylesheet" type="text/css">
+        <link href="styles.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="Imagenes\InicioSesion\icon.png">
     </head>
     <body>
@@ -44,6 +49,7 @@
                             var datos = respuesta.split(",");
                             console.log(respuesta);
                             // letra + "," + javax.xml.bind.DatatypeConverter.printBase64Binary(img64)
+                            $(".videoshow").show();
                             document.getElementById("palabra").innerHTML = datos[0];
                             document.getElementById("imagen").src = "data:image/jpg;base64," + datos[1];
                             document.getElementById("descripcion").innerHTML = datos[2];
@@ -80,80 +86,130 @@
             }
 
         </script>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="row">
-                    <div class="col-sm-9" style="background-color: rgb(69, 88, 121);">
-                        <div class="row">
-                            <div class="col-sm-3"><img class="pad img-responsive" src="Imagenes/menu_Principal/logo.png"></div>
-                            <div class="col-sm-2 "><br><a href="Inicio.jsp"><img class="pad img-responsive" width="65%" src="Imagenes/menu_Principal/regresar.png"></a></div>
-                            
-                        </div>                
+        <header class="hnav">
+            <div class="navimgprincipal" href="Inicio.jsp">
+                <h1 class="logoapp">
+                    <a href="#" alt="Logo_GestureTalkMx"></a>
+                </h1>
+            </div>
+
+            <nav class="navbar">
+                <a class="imgreturn" href="Inicio.jsp">
+                    <img class="img-resp" src="Imagenes/menu_Principal/regresar.png" >
+                </a>
+                <a href="#"> Antes de empezar</a>
+                <div class="dropdown">
+                    <button class="dropbtn" href="info.jsp">Información 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Antecedentes</a>
+                        <a href="#">¿Sabías que...?</a>
+                        <a href="#">Datos curiosos</a>
+                        <a href="#">Estadísticas</a>
                     </div>
-                    <div class="col-sm-3" style="background-color: rgb(147, 205, 207);">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-8 text-center" >
-                            <%
-                                switch (user.getId_avatar()) {
-                                    case 1:
-                            %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png" width="108px" height="108px"></div><%
+                </div> 
+
+                <a href="Busqueda.jsp">Diccionario</a>
+                <a href="Escoger.jsp">Practica</a>
+                <div class="dropdown">
+                    <button class="dropbtn" >Puntajes 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="puntaje.jsp">Puntaje personal</a>
+                        <a href="#">Puntajes globales</a>
+                    </div>
+                </div> 
+
+                <div class="dropdown nvimguser">
+                    <div class="imguser">
+                        <%                            switch (user.getId_avatar()) {
+                                case 1:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
+                                break;
+                            case 2:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" ><%
+                                break;
+                            case 3:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" ><%
+                                break;
+                            case 4:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" ><%
+                                break;
+                            case 5:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png"><%
+                                break;
+                            case 6:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png"><%
+                                break;
+                            default:
+                        %><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png"><%
                                     break;
-                                case 2:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/2c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    case 3:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/3c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    case 4:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/4c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    case 5:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/5c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    case 6:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/6c.png" width="108px" height="108px"></div><%
-                                        break;
-                                    default:
-                                %><div class="row"><img class="pad2" src="Imagenes/Avatares/Elejido/1c.png" width="108px" height="108px"></div><%
-                                            break;
-                                    }
-                                    out.println("<div class='row'><span id='letras'>" + user.getNickname() + "</span></div>");
-                                %>                             
-                                <%--<div class="row"><span id="letras">Erick</span></div>--%>
-                        </div>
-                        <div class="col-sm-2"></div>
+                            }
+                            out.println("<span id='letras' class='titulo-pequeno'>" + user.getNickname() + "</span>");
+                        %>                                                             
                     </div>
-                </div>           
-                <div class="row text-center"><span id="letras2">Diccionario</span></div>         
-                <div class="row"><br><br></div>
-                <div class="row">
-                    <div class="col-sm-6"></div>
-                    <div class="col-sm-6">
-                        <div class="row"><span class="colorblue">Buscar Palabra</span></div>
-                        <div class="row">
-                            <input class="bordes" type="text" size="50" name="letra" id="letra" onkeypress="enter()" placeholder="Búsqueda">
-                            <img src="Imagenes/busqueda/lupa.png" onclick="realizaBusqueda()" width="9%" >
+                    <div class="dropdown-content nvuser {">
+                            <a href="configuracion.jsp"> Configuración</a>
+                            <a href="cerrarSesion.jsp"> Cerrar sesión</a>
                         </div>
-                    </div>
-                </div>
-                <div class="row">                    
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="row"><img  class="img-responsive" src="" width="400px" height="400px" id="imagen"></div>                                                                    
-                            </div>                            
-                            <div class="col-sm-6 text-center">
-                                <div class="row"><br><br></div>
-                                <div class="row text-center"><span class="palabra" id="palabra"></span></div>
-                                <div class="row"><br><br></div>
-                                <div class="row"><span class="descText" id="descripcion"></span></div>                                
+                    </div> 
+                </nav>
+            </header>   
+            <div class="fondoapp pgebusqueda">
+                <div class="wrap">
+                    <div id="btnsbusqueda" >
+                        <div class="btnoragne" id="btnshowqucksrch">
+                            <h2 class="parrafo-normal">
+                                Búsqueda Rápida
+                            </h2>
+                        </div>
+                        <div class="btnoragne" id="btnshowallwrds">
+                            <h2 class="parrafo-normal">
+                                Diccionario completo
+                            </h2>
+                        </div>
+                    </div>  
+                    
+                    <div id="busquedadicc">
+                        <div id="busquedaquck">
+                            <span class="colorblue">Buscar Palabra</span>
+                            <div id="buscadordic">
+                                <input class="bordes inptbuscador" type="text" size="50" name="letra" id="letra" onkeypress="enter()" placeholder="Búsqueda">
+                                <a href="javascript:void(0)" id="lupa">
+                                    <img src="Imagenes/busqueda/lupa.png" class="img-resp" onclick="realizaBusqueda()">
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-1"></div>
+                        
+                        <div id="busquedaall">
+                            <span class="colorblue">Busqueda avanzada </span>
+                            <div id="buscadordic">
+                               
+                            </div>
+                        </div>
+
+
+                        <div id="videodiccionario">                    
+                            <div class="videoshow">
+                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 
+                            </div>                            
+                            <div>
+                                <span class="palabra" id="palabra"></span>
+                                <span class="descText" id="descripcion"></span>                            
+                            </div>
+                        </div>
+                        
+                        
+                    </div>                  
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+            <footer>
+                <div class="wrap">
+                    <p>Todos los derechos reservados Gesture Talk S.A de C.V.</p>
+                    <h4 class="titulo-pequeno">correo@mail.com</h4>
+                </div>        
+            </footer>
+        </body>
+    </html>

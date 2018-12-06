@@ -17,15 +17,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Configución</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link href="Estilos/styleConfiguracion.css" rel="stylesheet" type="text/css">
-
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Ubuntu:400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-        <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-        <!--        <script src="JavaScripCodes/PrincipalFunciones.js"  type="text/javascript"></script>-->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
         <script src="JavaScripCodes/scripts.js"  type="text/javascript"></script>
         <link href="reset.css" rel="stylesheet" type="text/css">
@@ -73,14 +69,11 @@
                     document.getElementById('cambio-nombre').style.display = 'none';
                     bandNombre = true;
                 }
-
             }
-//             function displayAvatars() {
-//                document.getElementById('select-avatar').style.display = 'block';
-//            }
-//            function displayConCont() {
-//                document.getElementById('conf-pass').style.display = 'block';
-//            }
+            function hiddeChangeAvatar() {
+                $("#select-avatar").hide();
+                bandAvatar = true;
+            }
 
             var ajax;
             function funcionCallback() {
@@ -138,10 +131,7 @@
                 }
             }
 
-            function hiddeChangeAvatar() {
-                document.getElementById('select-avatar').style.display = 'none';
-                bandAvatar = true;
-            }
+
 
             function sendUpdate() {
                 var id_usuario = "<%=user.getId_usuario()%>";
@@ -233,10 +223,10 @@
             </header>       
 
             <div class="fondoapp">
-                <div class="wrap cnfppal">
+                <div class="wrap pgconf">
+                    <div class="cnfppal">
                     <!--           --------------------------CAMBIO DE IMAGEN--------------   -->
-<!--                    VARIABLE DE CAMBIO, SI SE DETECTA QUE CAMBIO ALGO AHORA SI EL BOTON DE CONFIRMAR SE MUESTRA-->
-                    
+                    <!--                    VARIABLE DE CAMBIO, SI SE DETECTA QUE CAMBIO ALGO AHORA SI EL BOTON DE CONFIRMAR SE MUESTRA-->
                     <div id="chgavatar">
                         <a href="javascript:void(0)">
                             <div class="btnoragne btnesconf">
@@ -246,33 +236,7 @@
                             </div>
                         </a>
                     </div>
-                    <div id="select-avatar">
-                        <div class="col-sm-10" style="align-items: center;">                            
-                            <div>                                    
-                                <div class="col-sm-12"><label><img class="img-resp" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" width="100px;" height="100px" ></label></div>                                                                    
-                            </div>
-                            <div style="text-align: center;"><span class="letrasForm">Elige tu avatar</span></div>
-                            <div id="imgBorder">
-                                <div class="col-sm-4"><img class="img-resp" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-resp" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-resp" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg" width="100px;" height="100px"></div>
-                            </div>
-                            <div id="imgBorder">
-                                <div class="col-sm-4"><img class="img-resp" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-resp" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg" width="100px;" height="100px"></div>
-                                <div class="col-sm-4"><img class="img-resp" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg" width="100px;" height="100px"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="col-sm-4">
-                                <div>
-                                    <a href="javascript:void(0)" onclick="hiddeChangeAvatar()">
-                                        <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <!--           --------------------------CAMBIO DE NOMBRE--------------   -->                        
                     <div id="chgname">
@@ -284,16 +248,7 @@
                             </div>
                         </a>
                     </div>
-                    <div id="cambio-nombre">
-                        <div><p class="errorMsg" id="errorNombre"></p></div>
-                        <div><input class="bor" id="nombre" type="text" value="<%=user.getNickname()%>" maxlength="10"></div>
-                        <div class="col-sm-4">
-                            <div><a href="javascript:void(0)" onclick="hiddeChangeName()">
-                                    <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <!--           --------------------------CAMBIO DE CONTRASEÑA--------------   -->                          
                     <div id="chgpassw" >
@@ -305,27 +260,81 @@
                             </div>
                         </a>
                     </div>
-                    <div id="conf-pass">
-                        <div><p class="errorMsg" id="errorPass"></p></div>
-                        <div><p class="letrasForm">Confirmar Contraseña</p></div>                            
-                        <div>
-                            <input class="bor" id="oldPass" type="password">
-                            <a href="javascript:void(0)" onclick="compruebaPass()"><img src="Imagenes/Configuracion/btnConfirmarCambio.png"></a>
-                        </div>
+
+
+                    <!--           --------------------------BOTON DE CONFIRMACION--------------   --> 
+                    <div id="btnconfirmacion">
+                        <a href="javascript:void(0)" onclick="sendUpdate()">
+                            <div class="btnoragne btnesconf">
+                                <h2 class="parrafo-normal">
+                                    Confirmar los cambios
+                                </h2>
+                            </div>
+                        </a>
                     </div>
-                    <!--                        checar en donde se pone esto-->
-                    <div id="change-pass">
-                        <div><p class="errorMsg" id="errorNewPass"></p></div>
-                        <div class="col-sm-6" >
-                            <div><p class="letrasForm">Nueva Contraseña</p></div>
-                            <input class="bor" id="newPass" type="password">
+                </div>
+                    
+
+                        <div id="select-avatar">
+                            <div>                            
+                                <div>
+                                    <label>
+                                        <img class="img-resp imgpre" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" >
+                                    </label>
+                                </div>                                                                    
+                                <div>
+                                    <span class="titulo-pequeno txtconfig">Elige tu avatar</span>
+                                </div>
+                                <div id="imgBorder">
+                                    <img class="img-resp imgpre" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg">
+                                    <img class="img-resp imgpre" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg">
+                                    <img class="img-resp imgpre" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg">
+                                    <img class="img-resp imgpre" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg">
+                                    <img class="img-resp imgpre" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg">
+                                    <img class="img-resp imgpre" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="btnoragne btnesconf" onclick="hiddeChangeAvatar()">
+                                    <h2 class="parrafo-normal">
+                                        Confirmar
+                                    </h2>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div><p class="letrasForm">Confirma Contraseña</p></div>
-                            <input class="bor" id="confNewPass" type="password">
+
+                        <div id="cambio-nombre">
+                            <div><p class="errorMsg" id="errorNombre"></p></div>
+                            <div>
+                                <input class="bor" id="nombre" type="text" value="<%=user.getNickname()%>" maxlength="10">
+                            </div>
+                            <div>
+                                <a href="javascript:void(0)" onclick="hiddeChangeName()">
+                                    <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
+                                </a>
+                            </div>                           
                         </div>
-                        <div>
-                            <div class="col-sm-4">
+
+                        <div id="conf-pass">
+                            <div><p class="errorMsg" id="errorPass"></p></div>
+                            <div><p class="letrasForm">Confirmar Contraseña</p></div>                            
+                            <div>
+                                <input class="bor" id="oldPass" type="password">
+                                <a href="javascript:void(0)" onclick="compruebaPass()"><img src="Imagenes/Configuracion/btnConfirmarCambio.png"></a>
+                            </div>
+                        </div>
+                        <!--                        checar en donde se pone esto-->
+                        <div id="change-pass">
+                            <div><p class="errorMsg" id="errorNewPass"></p></div>
+                            <div class="col-sm-6" >
+                                <div><p class="letrasForm">Nueva Contraseña</p></div>
+                                <input class="bor" id="newPass" type="password">
+                            </div>
+                            <div class="col-sm-6">
+                                <div><p class="letrasForm">Confirma Contraseña</p></div>
+                                <input class="bor" id="confNewPass" type="password">
+                            </div>
+                            <div>
                                 <div>
                                     <a href="javascript:void(0)" onclick="hiddeChangePass()">
                                         <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
@@ -333,21 +342,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!--           --------------------------BOTON DE CONFIRMACION--------------   --> 
-                    <div id="btnconfirmacion">
-                        <a href="javascript:void(0)" onclick="sendUpdate()">
-                            <div class="btnoragne btnesconf">
-                                <h2 class="parrafo-normal">
-                                    Confirmar Todos los cambios
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>  
-                        
+                </div>  
+            </div>
             <footer>
                 <div class="wrap">
                     <p>Todos los derechos reservados Gesture Talk S.A de C.V.</p>

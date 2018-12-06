@@ -24,6 +24,9 @@ html {
 .col-4{
     width: 30%;
 }
+.col-3{
+    width: 25%;
+}
 
 /*TEXTOS*/
 
@@ -67,6 +70,10 @@ html {
 h3.titulo-pequeno{
 	text-align: center;
 	color: white;
+}
+.txtconfig{
+    text-align: center;
+    color: rgb(251, 174, 60);
 }
 
 .wrap {
@@ -282,7 +289,7 @@ input.parrafo-normal.btnoragne {
 
 /*----------APP---------*/
 .fondoapp {
-    height: calc(100vh - 15vh - 56px);
+    height: calc(100vh - 15vh - 5vh);
     color: #eff1f6;
     min-height: fit-content;
     width: 100%;
@@ -333,6 +340,7 @@ header{
     text-align: center;
     padding: 40px 0%;
     text-decoration: none;
+    transition: all 0.5s ease 0s;
 }
 .navimgprincipal {
     height: 15vh;
@@ -352,6 +360,7 @@ header{
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    transition: all 0.5s ease 0s;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn , .dropdown.nvimguser:hover {
@@ -375,6 +384,7 @@ header{
     text-decoration: none;
     display: block;
     text-align: left;
+    transition: all 0.5s ease 0s;
 }
 
 .dropdown-content a:hover {
@@ -387,6 +397,7 @@ header{
 .dropdown.nvimguser {
     width: 15%;
     padding: 4px 0%;
+    transition: all 0.5s ease 0s;
 }
 .dropdown-content.nvuser {
     width: 12%;
@@ -516,10 +527,113 @@ button.slick-next{
 #select-avatar, #cambio-nombre, #conf-pass, #change-pass{
     display: none;
 }
-.wrap.cnfppal {
+.wrap.pgconf {
+   height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cnfppal {
     flex-flow: column;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    height: inherit;  
+}
+#select-avatar, #cambio-nombre, #conf-pass{
+    width: 40%;
+}
+
+/*-----------------DICCIONARIO----------*/
+.fondoapp.pgebusqueda {
+    justify-content: start;
+}
+.titulo-grande.orgetxt{
+    color: #FBAE3C;
+}
+#btnsbusqueda {
+    display: flex;
+    flex-flow: row;
+    margin: 2% 0;
+    justify-content: space-evenly;
+}
+#busquedadicc, #busquedaall{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-content: center;
+}
+#busquedaall{
+   display: none; 
+}
+#btnsbusqueda .btnoragne {
+    padding: 1% 0%;
+    width: 228px;
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+}
+#btnsbusqueda .btnoragne:hover {
+    background-color: #455879;
+    color: white;
+}
+#btnsbusqueda .btnoragne h2 {
+    font-size: 1.4em;
+}
+#busquedaquck, #videodiccionario{
+    width: 40%;
+}
+#buscadordic{
+    display: flex;
+    flex-flow: row;
+}
+#lupa{
+    width: 20%;
+}
+.bordes.inptbuscador{
+    width: 90%;
+}
+/*-----------------Selección de unidad----------*/
+.wrap.pgunidad {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     height: inherit;
+    align-items: center;
+}
+
+.btnoragneunidad {
+    width: 200px;
+    padding: 90px 0;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #FCDEB0;
+    border: solid #FAB248 5px;
+    cursor: pointer;
+    position: relative;
+    margin: 0 2%;
+}
+
+.btnoragneunidad h2{
+    color: #5D666B;
+    font-size: 1.6em;
+}
+
+.btnoragneunidad.unitblock h2::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 105%;
+    height: 105%;
+    border-radius: 15px;
+    background: rgba(69, 88, 121, 0.7);
+    cursor: not-allowed;
+}
+.btnoragneunidad.unitblock::after {
+    content: url(Imagenes/niveles/candado.png);
+    position: absolute;
+    top: 30px;
+    left: 47px;
+    cursor: not-allowed;
 }
