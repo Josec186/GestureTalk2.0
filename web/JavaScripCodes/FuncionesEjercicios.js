@@ -44,8 +44,12 @@ function valor(value) {
     document.getElementById('resp').value = value;
 }
 function salir() {
-    $("#salir").modal("show");
+    document.getElementById('salir').style.display = "flex";
 }
+function blckmodal(){
+    document.getElementById('salir').style.display = "none";
+}
+
 function extras() {
 
     $("#respuestas").modal("show");
@@ -104,8 +108,16 @@ function extras() {
     }
     document.finalizo.final.value = puntaje;
 }
+
 $(document).ready(function ()
 {
     $("#mostrarmodal").modal("show");
 }
 );
+$(window).click(function() {
+    document.getElementById('mostrarmodal').style.display = "none";
+});
+
+$('#mostrarmodal').click(function(event){
+    event.stopPropagation();
+});

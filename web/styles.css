@@ -338,7 +338,7 @@ header{
     width: 12%;
     color: white;
     text-align: center;
-    padding: 40px 0%;
+    padding: 6vh 0%;
     text-decoration: none;
     transition: all 0.5s ease 0s;
 }
@@ -353,10 +353,11 @@ header{
 .dropdown .dropbtn {
     font-size: 17px;
     border: none;
-    width: 125%;
+    min-width: 160px;
+    max-width: 160px;
     outline: none;
     color: white;
-    padding: 37px 12%;
+    padding: 6vh 1%;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -611,7 +612,7 @@ button.slick-next{
     border: solid #FAB248 5px;
     cursor: pointer;
     position: relative;
-    margin: 0 2%;
+    margin: 0 4%;
 }
 
 .btnoragneunidad h2{
@@ -636,4 +637,214 @@ button.slick-next{
     top: 30px;
     left: 47px;
     cursor: not-allowed;
+}
+
+/*------------------Seleccion de nivel--------------*/
+.btnoragneniv {
+    width: 200px;
+    padding: 90px 0;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #FCDEB0;
+    border: solid #FAB248 5px;
+    cursor: pointer;
+    position: relative;
+    margin: 0 4%;
+}
+.btnoragneniv h2{
+    color: #5D666B;
+    font-size: 1.8em;
+}
+
+/*-----------------EJERCICIOS--------------*/
+#puntaje {
+    padding: 3% 0%;
+    border: 1px solid white;
+    border-radius: 7px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: monospace;
+}
+.navbar.navejercicio {
+    margin: 0;
+    justify-content: space-between;
+}
+.puntejercicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+     margin-left: 10%;
+    margin-right: 20%;
+}
+#estrella {
+    max-width: 50px;
+    min-width: 50px;
+}
+#puntaje::after {
+    content: url(Imagenes/Ejercicios/estrella.png);
+    position: absolute;
+    top: 10%;
+    left: 26%;
+    max-width: 50px;
+    min-width: 50px;
+}
+.layoutejercicio{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.layoutejercicio *{
+    margin-bottom: 1%;
+}
+.encabezado{
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(251, 174, 60);
+    font-size: x-large;
+}
+.btnrespuestas, .btnrespusetasvideo{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+
+.btnrespuestas *{
+    width: 30%;
+}
+.col-4.imgejercicio{
+    max-width: 400px;
+    min-width: 400px;
+}
+.mdal{
+   display: none;
+}
+.mrespuesta{
+    display: flex;
+}
+.mdal, .mrespuesta {
+    position: fixed;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.imgmodal {
+    max-width: 500px;
+    min-width: 500px;
+    margin-bottom: 10%;
+    animation-name: animodal;
+    animation-duration: 0.5s;
+}
+.incomodal, .incomodalej2 {
+    margin-bottom: 5%;
+    animation-name: animodal;
+    animation-duration: 0.5s;
+    width: 50%;
+    height: 65%;
+    background: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column;
+}
+.boximg{
+    max-width: 150px;
+    min-width: 150px;
+}
+/*.incomodal img{
+    max-width: 300px;
+    min-width: 300px;
+}
+.incomodalej2 img{
+    max-width: 190px;
+    min-width: 190px;
+}*/
+
+
+@keyframes animodal {
+  from {margin-bottom: 100%;}
+  to {margin-bottom: 10%;}
+}
+    
+    
+.fondemdal {
+    background-color: #F8F8F8;
+    width: 40%;
+    height: 30%;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 10%;
+    animation-name: animodal;
+    animation-duration: 0.5s;
+}
+.modal-header h3.titulo-mediano {
+    color: black;
+}
+.close {
+    font-size: 36px;
+    font-weight: 700;
+}
+.modal-header, .modal-body{
+    display: flex;
+    flex-flow: column;
+}
+.modal-header{
+    align-items: flex-end;
+    padding: 15px;
+}
+.modal-body{
+    padding: 5% 0;
+    display: flex;
+    align-items: center;
+}
+.modal-footer {
+    display: flex;
+    padding: 5% 0;
+    justify-content: center;
+    align-items: center;
+}
+#btnsalir{
+    padding: 5% 20%;
+}
+
+.rsptaej2{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.modal-backdrop {
+    position:inherit !important;
+}
+.rightanswer{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+.rightanswer h4.encabezado{
+    font-family: 'Roboto Slab', serif;
+    font-size: 2em;
+    color: #455879;
+}
+.rightanswer video {
+    width: 240px;
+    height: 210px;
+}
+.btnrespusetasvideo img{
+    width: 30%;
 }

@@ -133,42 +133,7 @@
 
             <div class="fondoapp">
                 <div class="wrap pgunidad">
-                    <%
-                        /*Hacemos la consulta para sacar el nivel en el que esta el usuario actua
-                         y de acuerdo a esto bloqueamos o desbloqueamos la unidad a la que 
-                         puede ingresar
-                         
-                        
-                        ArrayList<Integer> nivel = new ArrayList();
-                        ArrayList<Integer> u1 = new ArrayList(); // Coleccion de niveles de unidad 
-                        ArrayList<Integer> u2 = new ArrayList(); // Coleccion de niveles de unidad 
-                        ArrayList<Integer> u3 = new ArrayList(); // Coleccion de niveles de unidad 
-                        ArrayList<Integer> u4 = new ArrayList(); // Coleccion de niveles de unidad 
-                        ArrayList<Integer> u5 = new ArrayList(); // Coleccion de niveles de unidad 
-                        String consulta = "select id_nivel from realizo where id_usuario='" + user.getId_usuario() + "';";
-                        objConn.Consultar(consulta);
-                        
-                        u1.add(1);
-                        u1.add(2);
-                        u1.add(3);
-                        u2.add(4);
-                        u2.add(5);
-                        u3.add(6);
-                        u3.add(7);
-                        u3.add(8);
-                        u4.add(9);
-                        u4.add(10);
-                        u5.add(11);
-                        u5.add(12);
-                        u5.add(13);
-                        // ResultSetMetaData metaData = objConn.rs.getMetaData();
-                        //int x = metaData.getColumnCount();
-                        while (objConn.rs.next()) {
-                            nivel.add(objConn.rs.getInt(1));
-                        }
-                        //out.println("<span id='letras' class='titulo-pequeno'>" + nivel + "</span>");
-                        
-                         */
+                    <%      
                         ArrayList<Integer> nivel = new ArrayList();
                         ArrayList<ArrayList<Integer>> unidades = new ArrayList<ArrayList<Integer>>();
 
