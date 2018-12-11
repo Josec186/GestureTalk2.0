@@ -13,17 +13,17 @@
     objConn.Consultar(consulta);
     if (objConn.rs.getRow() != 0) {
         String letra="NaN";
-        byte[] img64 = null;
+        String vid = "NaN";
         String descripcion="NaN";
         try {            
             letra = objConn.rs.getString(2);
-            img64 = objConn.rs.getBytes(4);
+            vid = objConn.rs.getString(4);
             descripcion = objConn.rs.getString(5);
         } catch (Exception e) {
         }
         objConn.closeRsStmt();
         %>
-        <%= letra + "," + javax.xml.bind.DatatypeConverter.printBase64Binary(img64) +","+ descripcion%>
+        <%= letra + "," + vid +","+ descripcion%>
     <%}else{
         objConn.closeRsStmt();%>
         <%="no"%>

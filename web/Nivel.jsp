@@ -155,10 +155,7 @@
                 </nav>
             </header>       
 
-
-            <div class="fondoapp">
-                <div class="wrap pgunidad">
-                    <%
+<%
                         /*Tomamos la unidad que se escogió y obtendremos los niveles que le corresponden, obtendremos sus enlaces 
                         y los pintaremos*/
                         ArrayList<String> nivel = new ArrayList();
@@ -190,7 +187,10 @@
                         //  ResultSetMetaData metaData = objConn.rs.getMetaData();
                         /*   while(objConn.rs.next()){
                   //            nivel.add(objConn.rs.getInt(1));
-                      }*/         
+                      }*/         %>
+            <div class="fondoapp">
+                <div class="wrap pgunidad">
+                    <%
                         for(int i = 0; i < (nivel.size()); i++){              
                     %> 
                     <div class="btnoragneniv" onclick="location.href = 'LlamaNivel.jsp?nivel=' + <% out.println(num.get(i)); %>;">

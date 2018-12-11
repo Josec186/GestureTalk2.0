@@ -397,12 +397,11 @@ header{
 }
 .dropdown.nvimguser {
     width: 15%;
-    padding: 4px 0%;
+    padding: 1vh 0%;
     transition: all 0.5s ease 0s;
 }
 .dropdown-content.nvuser {
     width: 12%;
-    margin-top: 4px;
 }
 
 .imguser {
@@ -410,6 +409,7 @@ header{
     flex-flow: column;
     justify-content: start;
     align-items: center;
+    padding: 1vh 0;
 }
 #letras.titulo-pequeno{
     color: white;
@@ -504,6 +504,163 @@ button.slick-next{
 .tuPuntaje .titulo-grande  {
     color: rgb(19, 24, 32);
 }
+/*-----------------PUNTAJE GLOBAL----------*/
+
+
+
+.header {
+   background-color: darken(#398B93, 5%);
+   color: white;
+   font-size: 1.5em;
+   padding: 1rem;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+
+.table-users {
+   border: 1px solid darken(#398B93, 5%);
+   border-radius: 10px;
+   box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+   max-width: calc(100% - 2em);
+   margin: 1em auto;
+   overflow: hidden;
+   width: 800px;
+}
+
+table {
+   width: 100%;
+   
+   td, th { 
+      color: darken(#398B93, 10%);
+      padding: 10px; 
+   }
+   
+   td {
+      text-align: center;
+      vertical-align: middle;
+      
+      &:last-child {
+         font-size: 0.95em;
+         line-height: 1.4;
+         text-align: left;
+      }
+   }
+   
+   th { 
+      background-color: lighten(#398B93, 50%);
+      font-weight: 300;
+   }
+   
+   tr {     
+      &:nth-child(2n) { background-color: white; }
+      &:nth-child(2n+1) { background-color: lighten(#398B93, 55%) }
+   }
+}
+
+@media screen and (max-width: 700px) {   
+   table, tr, td { display: block; }
+   
+   td {
+      &:first-child {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 100px;
+      }
+
+      &:not(:first-child) {
+         clear: both;
+         margin-left: 100px;
+         padding: 4px 20px 4px 90px;
+         position: relative;
+         text-align: left;
+
+         &:before {
+            color: lighten(#398B93, 30%);
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+         }
+      }
+
+      &:nth-child(2):before { content: 'Name:'; }
+      &:nth-child(3):before { content: 'Email:'; }
+      &:nth-child(4):before { content: 'Phone:'; }
+      &:nth-child(5):before { content: 'Comments:'; }
+   }
+   
+   tr {
+      padding: 10px 0;
+      position: relative;
+      &:first-child { display: none; }
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .header {
+      background-color: transparent;
+      color: lighten(#398B93, 60%);
+      font-size: 2em;
+      font-weight: 700;
+      padding: 0;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+   }
+   
+   img {
+      border: 3px solid;
+      border-color: lighten(#398B93, 50%);
+      height: 100px;
+      margin: 0.5rem 0;
+      width: 100px;
+   }
+   
+   td {
+      &:first-child { 
+         background-color: lighten(#398B93, 45%); 
+         border-bottom: 1px solid lighten(#398B93, 30%);
+         border-radius: 10px 10px 0 0;
+         position: relative;   
+         top: 0;
+         transform: translateY(0);
+         width: 100%;
+      }
+      
+      &:not(:first-child) {
+         margin: 0;
+         padding: 5px 1em;
+         width: 100%;
+         
+         &:before {
+            font-size: .8em;
+            padding-top: 0.3em;
+            position: relative;
+         }
+      }
+      
+      &:last-child  { padding-bottom: 1rem !important; }
+   }
+   
+   tr {
+      background-color: white !important;
+      border: 1px solid lighten(#398B93, 20%);
+      border-radius: 10px;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+      margin: 0.5rem 0;
+      padding: 0;
+   }
+   
+   .table-users { 
+      border: none; 
+      box-shadow: none;
+      overflow: visible;
+   }
+}
+
+
+
+
 
 /*--------index-----------*/
 #headindex{
@@ -545,6 +702,38 @@ button.slick-next{
     width: 40%;
 }
 
+#imgactual {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#imgBorder, #avataraconfir{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#chnamebox{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#chnamebox *{
+    margin: 2% 0;
+}
+#cambio-nombre .titulo-mediano{
+    color: black;
+}
+#updte {
+    background-color: darkred;
+}
+
+
+
+
 /*-----------------DICCIONARIO----------*/
 .fondoapp.pgebusqueda {
     justify-content: start;
@@ -580,7 +769,7 @@ button.slick-next{
 #btnsbusqueda .btnoragne h2 {
     font-size: 1.4em;
 }
-#busquedaquck, #videodiccionario{
+#busquedaquck, #videodiccionario, #busquedaall{
     width: 40%;
 }
 #buscadordic{
@@ -593,6 +782,78 @@ button.slick-next{
 .bordes.inptbuscador{
     width: 90%;
 }
+.videoshow {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+.videoshow video{
+    width: 60%;
+}
+
+
+.titulo-grande.diccionario, .titulo-mediano.diccionario{
+    color: black;
+    text-align: center;
+}
+.diccionario.textos {
+    display: flex;
+    padding: 5% 0;
+    flex-flow: column;
+    width: 100%;
+}
+
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+input[type=text]#letra {
+  background-color: #f2f2f2;
+  width: 95%;
+  margin: 0;
+}
+
+.autocomplete-items {
+  position: absolute;
+  width: 95%;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #9ba4b0;
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div * {
+color: black;
+}
+.autocomplete-items div:hover {
+  background-color: #707d8f;
+}
+.autocomplete-items div strong{
+    color: black;
+    font-weight: bold;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: black; 
+}
+
+
+
+
+
 /*-----------------Selección de unidad----------*/
 .wrap.pgunidad {
     display: flex;
@@ -604,8 +865,8 @@ button.slick-next{
 }
 
 .btnoragneunidad {
-    width: 200px;
-    padding: 90px 0;
+    width: 185px;
+    padding: 85px 0;
     text-align: center;
     border-radius: 15px;
     background-color: #FCDEB0;
@@ -617,7 +878,7 @@ button.slick-next{
 
 .btnoragneunidad h2{
     color: #5D666B;
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 .btnoragneunidad.unitblock h2::after {
@@ -634,15 +895,19 @@ button.slick-next{
 .btnoragneunidad.unitblock::after {
     content: url(Imagenes/niveles/candado.png);
     position: absolute;
-    top: 30px;
-    left: 47px;
+    top: 25px;
+    left: 40px;
     cursor: not-allowed;
 }
 
+
+
+
+
 /*------------------Seleccion de nivel--------------*/
 .btnoragneniv {
-    width: 200px;
-    padding: 90px 0;
+       width: 230px;
+    padding: 105px 0;
     text-align: center;
     border-radius: 15px;
     background-color: #FCDEB0;
@@ -653,7 +918,7 @@ button.slick-next{
 }
 .btnoragneniv h2{
     color: #5D666B;
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 /*-----------------EJERCICIOS--------------*/
@@ -845,6 +1110,95 @@ button.slick-next{
     width: 240px;
     height: 210px;
 }
-.btnrespusetasvideo img{
+/*.btnrespusetasvideo img{
     width: 30%;
+}*/
+.extranswer {
+    width: 35%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.extranswer img{
+    width: 60%;
+}
+.radbuttonsextra{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+        align-items: center;
+}
+
+/*----------------------*/
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #E0E0E0;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2f3b51;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 2px;
+    width: 12px;
+    height: 21px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.container .btnoragne {
+    padding: 1% 0%;
+    width: 180px;
+    border-radius: 8px;
 }

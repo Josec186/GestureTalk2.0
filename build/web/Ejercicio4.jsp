@@ -116,7 +116,7 @@
                 <div class="puntejercicio">
 
                     <div id="puntaje">
-                        <h4 class="titulo-mediano">
+                        <h4 class="titulo-mediano"><input id="punto" value="<%=ejercicios.getPuntaje()%>">
                             <%=ejercicios.getPuntaje()%>
                         </h4>   
                     </div>
@@ -154,7 +154,7 @@
         <%
             ArrayList<String> valor = new ArrayList<String>();
             ArrayList<String> real = new ArrayList<String>();
-            ArrayList<byte[]> resp = new ArrayList<byte[]>();
+            ArrayList<String> resp = new ArrayList<String>();
 
             valor.add(ejercicios.getNivel().get(0).getPalabra());
             valor.add(ejercicios.getNivel().get(0).getRf1());
@@ -172,112 +172,149 @@
         <div class="fondoapp">
             <div class="wrap pgunidad">
                 <form method="POST" onsubmit="" name="examen" class="layoutejercicio">
-
-                        
-                        <div>
-                        <h4 class="titulo-mediano encabezado ">Bonus</h4>
+                    <h4 class="titulo-mediano encabezado ">Bonus</h4>
+                    <div class="btnrespusetasvideo">
+                        <div class="extranswer">
+                            <div class="videoshow">
+                                <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
+                                <video id="videoclip" autoplay loop muted>
+                                    <source id="mp4video" src="Imagenes/videos/<%=resp.get(0)%>.mp4" type="video/mp4">
+                                </video>
                         </div> 
-                        <div class="btnrespusetasvideo">
-                           
-                            
-                                <img src="data:image/jpg;base64, <%=javax.xml.bind.DatatypeConverter.printBase64Binary(resp.get(0))%>" class="pad img-responsive imgRespuesta">
-                  <div class="col-sm-2">
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c1" value="<%=valor.get(0)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta"><%=valor.get(0)%></label>
-                                    </label>
-                                </div>
-                                    
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c1" value="<%=valor.get(1)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta" ><%=valor.get(1)%></label>
-                                    </label>
-                                </div>
-                            
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c1" value="<%=valor.get(2)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta" ><%=valor.get(2)%></label>
-                                    </label>
-                                </div>
-                            </div>
-                           
-                           
-                                <img src="data:image/jpg;base64, <%=javax.xml.bind.DatatypeConverter.printBase64Binary(resp.get(1))%>" class="pad img-responsive imgRespuesta">
-                       <div class="col-sm-2">
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c2" value="<%=valor.get(0)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta"><%=valor.get(0)%></label>
-                                    </label>
-                                </div>
-                              
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c2" value="<%=valor.get(1)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta" ><%=valor.get(1)%></label>
-                                    </label>
-                                </div>
-                             
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c2" value="<%=valor.get(2)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta" ><%=valor.get(2)%></label>
-                                    </label>
-                                </div>
 
-                            </div>
-                            
-                           
-                                <img src="data:image/jpg;base64, <%=javax.xml.bind.DatatypeConverter.printBase64Binary(resp.get(2))%>" class="pad img-responsive imgRespuesta">
-                            
-                            <div class="col-sm-2">
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c3" value="<%=valor.get(0)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta"><%=valor.get(0)%></label>      
-                                    </label>
-                                </div>
-                           
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c3" value="<%=valor.get(1)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta" ><%=valor.get(1)%></label>
-                                    </label>
-                                </div>
-                                <div class="row">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="c3" value="<%=valor.get(2)%>" onclick="activarExamen()">
-                                        <label class="encabezado1 label label-warning respuesta" ><%=valor.get(2)%></label>
-                                    </label>
-                                </div>
+                            <div class="radbuttonsextra">                
+                                <label class="container">
+                                    <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                            <%=valor.get(0)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c1" value="<%=valor.get(0)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
 
+                                <label class="container">
+                                     <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                              <%=valor.get(1)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c1" value="<%=valor.get(1)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container">
+                                     <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                              <%=valor.get(2)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c1" value="<%=valor.get(2)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
-                           
                         </div>
 
-                  
-              
+                        <div class="extranswer">
+                             <div class="videoshow">
+                                <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
+                                <video id="videoclip" autoplay loop muted>
+                                    <source id="mp4video" src="Imagenes/videos/<%=resp.get(1)%>.mp4" type="video/mp4">
+                                </video>
+                        </div> 
+                            
+                           <div class="radbuttonsextra">                
+                                <label class="container">
+                                    <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                            <%=valor.get(0)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c2" value="<%=valor.get(0)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
 
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-warning respuesta" disabled id="Confirmar" onclick="extras()">Confirmar</button>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="row">
-                                    <input type="text" id = "resp1" name="re1" value="<%=real.get(0)%>">
-                                </div>
-                                <div class="row">
-                                    <input type="text" id = "resp2" name="re2" value="<%=real.get(1)%>">
-                                </div>
-                                <div class="row">
-                                    <input type="text" id = "resp3" name="re3" value="<%=real.get(2)%>">
-                                </div>
-                            </div>
- 
+                                <label class="container">
+                                     <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                              <%=valor.get(1)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c2" value="<%=valor.get(1)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
 
-       
+                                <label class="container">
+                                     <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                              <%=valor.get(2)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c2" value="<%=valor.get(2)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>   
+
+                        <div class="extranswer">     
+                             <div class="videoshow">
+                                <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
+                                <video id="videoclip" autoplay loop muted>
+                                    <source id="mp4video" src="Imagenes/videos/<%=resp.get(2)%>.mp4" type="video/mp4">
+                                </video>
+                        </div> 
+
+                           <div class="radbuttonsextra">                
+                                <label class="container">
+                                    <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                            <%=valor.get(0)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c3" value="<%=valor.get(0)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container">
+                                     <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                              <%=valor.get(1)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c3" value="<%=valor.get(1)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="container">
+                                     <div class="btnoragne">
+                                        <h2 class="titulo-mediano">
+                                              <%=valor.get(2)%>
+                                        </h2>
+                                    </div>
+                                    <input type="radio" name="c3" value="<%=valor.get(2)%>" onclick="activarExamen()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-warning respuesta" disabled id="Confirmar" onclick="extras()">Confirmar</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <input type="text" id = "resp1" name="re1" value="<%=real.get(0)%>">
+                        </div>
+                        <div class="row">
+                            <input type="text" id = "resp2" name="re2" value="<%=real.get(1)%>">
+                        </div>
+                        <div class="row">
+                            <input type="text" id = "resp3" name="re3" value="<%=real.get(2)%>">
+                        </div>
+                    </div>
+
                 </form>
 
             </div>

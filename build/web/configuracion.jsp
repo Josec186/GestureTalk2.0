@@ -66,12 +66,25 @@
                     document.getElementById('errorNombre').innerHTML = "No se aceptan campos vacios";
                 } else {
                     document.getElementById('errorNombre').innerHTML = "";
-                    document.getElementById('cambio-nombre').style.display = 'none';
+                    $("#cambio-nombre").toggle(500);
+                    setTimeout(function () {
+                        $(".wrap.pgconf").css({
+                            "justify-content": "center"
+                        });
+                    }, 500);
+
+
                     bandNombre = true;
                 }
             }
             function hiddeChangeAvatar() {
-                $("#select-avatar").hide();
+                $("#select-avatar").toggle(500);
+                setTimeout(function () {
+                    $(".wrap.pgconf").css({
+                        "justify-content": "center"
+                    });
+                }, 500);
+
                 bandAvatar = true;
             }
 
@@ -123,6 +136,12 @@
                         document.getElementById('errorNewPass').innerHTML = "";
                         document.getElementById('oldPass').value = "";
                         bandContra = true;
+                        setTimeout(function () {
+                            $("#change-pass").hide(500);
+                            $(".wrap.pgconf").css({
+                                "justify-content": "center"
+                            });
+                        }, 500);
                     } else {
                         document.getElementById('errorNewPass').innerHTML = "Las contraseñas no coinciden";
                     }
@@ -225,86 +244,85 @@
             <div class="fondoapp">
                 <div class="wrap pgconf">
                     <div class="cnfppal">
-                    <!--           --------------------------CAMBIO DE IMAGEN--------------   -->
-                    <!--                    VARIABLE DE CAMBIO, SI SE DETECTA QUE CAMBIO ALGO AHORA SI EL BOTON DE CONFIRMAR SE MUESTRA-->
-                    <div id="chgavatar">
-                        <a href="javascript:void(0)">
-                            <div class="btnoragne btnesconf">
-                                <h2 class="parrafo-normal">
-                                    Cambiar Avatar
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <!--           --------------------------CAMBIO DE NOMBRE--------------   -->                        
-                    <div id="chgname">
-                        <a href="javascript:void(0)">
-                            <div class="btnoragne btnesconf">
-                                <h2 class="parrafo-normal">
-                                    Cambiar Nombre de Usuario
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <!--           --------------------------CAMBIO DE CONTRASEÑA--------------   -->                          
-                    <div id="chgpassw" >
-                        <a href="javascript:void(0)">
-                            <div class="btnoragne btnesconf">
-                                <h2 class="parrafo-normal">
-                                    Cambiar Contraseña
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <!--           --------------------------BOTON DE CONFIRMACION--------------   --> 
-                    <div id="btnconfirmacion">
-                        <a href="javascript:void(0)" onclick="sendUpdate()">
-                            <div class="btnoragne btnesconf">
-                                <h2 class="parrafo-normal">
-                                    Confirmar los cambios
-                                </h2>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                    
-
-                        <div id="select-avatar">
-                            <div>                            
-                                <div>
-                                    <label>
-                                        <img class="img-resp imgpre" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" >
-                                    </label>
-                                </div>                                                                    
-                                <div>
-                                    <span class="titulo-pequeno txtconfig">Elige tu avatar</span>
-                                </div>
-                                <div id="imgBorder">
-                                    <img class="img-resp imgpre" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg">
-                                    <img class="img-resp imgpre" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg">
-                                    <img class="img-resp imgpre" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg">
-                                    <img class="img-resp imgpre" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg">
-                                    <img class="img-resp imgpre" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg">
-                                    <img class="img-resp imgpre" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg">
-                                </div>
-                            </div>
-                            <div>
-                                <div class="btnoragne btnesconf" onclick="hiddeChangeAvatar()">
+                        <!--           --------------------------CAMBIO DE IMAGEN--------------   -->
+                        <!--                    VARIABLE DE CAMBIO, SI SE DETECTA QUE CAMBIO ALGO AHORA SI EL BOTON DE CONFIRMAR SE MUESTRA-->
+                        <div id="chgavatar">
+                            <a href="javascript:void(0)">
+                                <div class="btnoragne btnesconf">
                                     <h2 class="parrafo-normal">
-                                        Confirmar
+                                        Cambiar Avatar
                                     </h2>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
-                        <div id="cambio-nombre">
+
+                        <!--           --------------------------CAMBIO DE NOMBRE--------------   -->                        
+                        <div id="chgname">
+                            <a href="javascript:void(0)">
+                                <div class="btnoragne btnesconf">
+                                    <h2 class="parrafo-normal">
+                                        Cambiar Nombre de Usuario
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!--           --------------------------CAMBIO DE CONTRASEÑA--------------   -->                          
+                        <div id="chgpassw" >
+                            <a href="javascript:void(0)">
+                                <div class="btnoragne btnesconf">
+                                    <h2 class="parrafo-normal">
+                                        Cambiar Contraseña
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!--           --------------------------BOTON DE CONFIRMACION--------------   --> 
+                        <div id="btnconfirmacion">
+                            <a href="javascript:void(0)" onclick="sendUpdate()">
+                                <div class="btnoragne btnesconf" id="updte">
+                                    <h2 class="parrafo-normal">
+                                        Confirmar los cambios
+                                    </h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div id="select-avatar">
+                        <div id="imgactual">
+                            <label>
+                                <img class="img-resp imgpre" id="cambio" src="Imagenes/Avatares/Elejido/1c.png" >
+                            </label>                                                                                                 
+                            <span class="titulo-pequeno txtconfig">Elige tu avatar</span>
+                        </div>
+                        <div id="imgBorder">
+                            <img class="img-resp imgpre" onclick="avatar1();" id="marco1" src="Imagenes/Avatares/Elije/1.jpg">
+                            <img class="img-resp imgpre" onclick="avatar2();" id="marco2" src="Imagenes/Avatares/Elije/2.jpg">
+                            <img class="img-resp imgpre" onclick="avatar3();" id="marco3" src="Imagenes/Avatares/Elije/3.jpg">
+                            <img class="img-resp imgpre" onclick="avatar4();" id="marco4" src="Imagenes/Avatares/Elije/4.jpg">
+                            <img class="img-resp imgpre" onclick="avatar5();" id="marco5" src="Imagenes/Avatares/Elije/5.jpg">
+                            <img class="img-resp imgpre" onclick="avatar6();" id="marco6" src="Imagenes/Avatares/Elije/6.jpg">
+                        </div>
+
+                        <div id="avataraconfir">
+                            <div class="btnoragne btnesconf" onclick="hiddeChangeAvatar()">
+                                <h2 class="parrafo-normal">
+                                    Confirmar
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cambio-nombre">
+                        <div id="chnamebox">
                             <div><p class="errorMsg" id="errorNombre"></p></div>
+                            <h3 class="titulo-mediano">Escribe tu nuevo Nickname</h3>
                             <div>
                                 <input class="bor" id="nombre" type="text" value="<%=user.getNickname()%>" maxlength="10">
                             </div>
@@ -312,25 +330,29 @@
                                 <a href="javascript:void(0)" onclick="hiddeChangeName()">
                                     <img class="img-resp" src="Imagenes/Configuracion/btnConfirmarCambio.png">
                                 </a>
-                            </div>                           
+                            </div>    
                         </div>
+                    </div>
 
-                        <div id="conf-pass">
+                    <div id="conf-pass">
+                        <div id="chnamebox">
                             <div><p class="errorMsg" id="errorPass"></p></div>
                             <div><p class="letrasForm">Confirmar Contraseña</p></div>                            
                             <div>
                                 <input class="bor" id="oldPass" type="password">
-                                <a href="javascript:void(0)" onclick="compruebaPass()"><img src="Imagenes/Configuracion/btnConfirmarCambio.png"></a>
+                                <a href="javascript:void(0)" onclick="compruebaPass()" id="chnamebox"><img src="Imagenes/Configuracion/btnConfirmarCambio.png"></a>
                             </div>
                         </div>
-                        <!--                        checar en donde se pone esto-->
-                        <div id="change-pass">
+                    </div>
+                    <!--                        checar en donde se pone esto-->
+                    <div id="change-pass">
+                        <div id="chnamebox">
                             <div><p class="errorMsg" id="errorNewPass"></p></div>
-                            <div class="col-sm-6" >
+                            <div class="col-sm-6" id="chnamebox">
                                 <div><p class="letrasForm">Nueva Contraseña</p></div>
                                 <input class="bor" id="newPass" type="password">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" id="chnamebox">
                                 <div><p class="letrasForm">Confirma Contraseña</p></div>
                                 <input class="bor" id="confNewPass" type="password">
                             </div>
@@ -342,6 +364,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>  
             </div>
             <footer>

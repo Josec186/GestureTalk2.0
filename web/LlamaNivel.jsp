@@ -26,9 +26,9 @@
             objConn.Consultar(consulta);
             ArrayList<Ejercicio> ejercicio = new ArrayList<Ejercicio>();
             ArrayList<Ejercicio> pregunta = new ArrayList<Ejercicio>();
-            ejercicio.add(new Ejercicio(objConn.rs.getString(2),objConn.rs.getBytes(3)));
+            ejercicio.add(new Ejercicio(objConn.rs.getString(2),objConn.rs.getString(3)));
             while(objConn.rs.next()) {
-                ejercicio.add(new Ejercicio(objConn.rs.getString(2),objConn.rs.getBytes(3)));
+                ejercicio.add(new Ejercicio(objConn.rs.getString(2),objConn.rs.getString(3)));
             }
             Nivel ejercicios = new Nivel(ejercicio);//SQL
             Nivel examen = new Nivel(pregunta);

@@ -61,7 +61,7 @@
                     </button>
                     <div class="dropdown-content">
                         <a href="puntaje.jsp">Puntaje personal</a>
-                        <a href="#">Puntajes globales</a>
+                        <a href="PuntajeGlobal.jsp">Puntajes globales</a>
                     </div>
                 </div> 
 
@@ -94,12 +94,13 @@
                             out.println("<span id='letras' class='titulo-pequeno'>" + user.getNickname() + "</span>");
                         %>                                                             
                     </div>
-                    <div class="dropdown-content nvuser {">
+                     <div class="dropdown-content nvuser {">
                             <a href="configuracion.jsp"> Configuración</a>
                             <a href="cerrarSesion.jsp"> Cerrar sesión</a>
-                        </div>
+                    </div>
                     </div> 
                 </nav>
+                   
             </header>
 
             <div class="fondoapp">

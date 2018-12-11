@@ -79,7 +79,7 @@ $(document).ready(function(){
             }
             $("#busquedaquck").show(500);
             $("#btnshowqucksrch").css({"background-color": "#455879"}, 500);
-            
+
         });
         
         $("#btnshowallwrds").click(function(){
@@ -89,6 +89,7 @@ $(document).ready(function(){
             }
             $("#busquedaall").show(500);  
             $("#btnshowallwrds").css({"background-color": "#455879"}, 500);
+
         });
        
        

@@ -32,7 +32,7 @@ public class Nivel {
         return nivel;
     }
 
-    public void insertar(String palabra, byte[] foto) {
+    public void insertar(String palabra, String foto) {
         nivel.add(new Ejercicio(palabra, foto));
     }
 

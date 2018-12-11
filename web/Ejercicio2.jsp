@@ -151,7 +151,7 @@
                             int a = (int) (Math.random() * 3), b = a, c = a;
                             ArrayList<Integer> aux = new ArrayList<Integer>();
                             ArrayList<String> valor = new ArrayList<String>();
-                            ArrayList<byte[]> resp = new ArrayList<byte[]>();
+                            ArrayList<String> resp = new ArrayList<String>();
                             while (b == a) {
                                 b = (int) (Math.random() * 3);
                             }
@@ -182,19 +182,34 @@
 
                         <div class="col-4">
                             <button type="button" class="btn btn-default active respuesta" id="borde1" onclick="activar('Confirmar', value)" value="<%= valor.get(0)%>">
-                                <img src="data:image/jpg;base64, <%=javax.xml.bind.DatatypeConverter.printBase64Binary(resp.get(0))%>" class="pad img-responsive imgRespuesta">
+                                <div class="videoshow">
+                                <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
+                                <video id="videoclip" autoplay loop muted>
+                                    <source id="mp4video" src="Imagenes/videos/<%=resp.get(0)%>.mp4" type="video/mp4">
+                                </video>
+                        </div> 
                             </button>
                         </div>
 
                         <div class="col-4">
                             <button type="button" class="btn btn-default active respuesta" id="borde2" onclick="activar('Confirmar', value)" value="<%= valor.get(1)%>">
-                                <img src="data:image/jpg;base64, <%=javax.xml.bind.DatatypeConverter.printBase64Binary(resp.get(1))%>" class="pad img-responsive imgRespuesta">
+                                <div class="videoshow">
+                                <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
+                                <video id="videoclip" autoplay loop muted>
+                                    <source id="mp4video" src="Imagenes/videos/<%=resp.get(1)%>.mp4" type="video/mp4">
+                                </video>
+                        </div> 
                             </button>
                         </div>
 
                         <div class="col-4">
                             <button type="button" class="btn btn-default active respuesta" id="borde3" onclick="activar('Confirmar', value)" value="<%= valor.get(2)%>">
-                                <img src="data:image/jpg;base64, <%=javax.xml.bind.DatatypeConverter.printBase64Binary(resp.get(2))%>" class="pad img-responsive imgRespuesta">
+                                <div class="videoshow">
+                                <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
+                                <video id="videoclip" autoplay loop muted>
+                                    <source id="mp4video" src="Imagenes/videos/<%=resp.get(2)%>.mp4" type="video/mp4">
+                                </video>
+                        </div> 
                             </button>
                         </div>
 

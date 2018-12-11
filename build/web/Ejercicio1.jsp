@@ -151,12 +151,16 @@
                     </div>
 
 
-                    <div class="col-4 imgejercicio">
                         <%
-                            String imagen = javax.xml.bind.DatatypeConverter.printBase64Binary(ejercicios.getNivel().get(0).getFoto());
+                            String imagen = ejercicios.getNivel().get(0).getFoto();
                         %>
-                        <img src="data:image/jpg;base64, <%=imagen%>" class="img-responsive" id="imgEjercicio">
-                    </div>
+                        
+                        <div class="videoshow">
+                                <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
+                                <video id="videoclip" autoplay loop muted>
+                                    <source id="mp4video" src="Imagenes/videos/<%=imagen%>.mp4" type="video/mp4">
+                                </video>
+                        </div> 
 
 
                     <div class="btnrespuestas">
