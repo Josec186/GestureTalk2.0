@@ -175,6 +175,7 @@
                     <h4 class="titulo-mediano encabezado ">Bonus</h4>
                     <div class="btnrespusetasvideo">
                         <div class="extranswer">
+                            
                             <div class="videoshow">
                                 <!--                                <img  class="img-responsive" src="" width="400px" height="400px" id="imagen">                                                                 -->
                                 <video id="videoclip" autoplay loop muted>
